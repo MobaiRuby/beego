@@ -27,9 +27,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/astaxie/beego/grace"
 	"github.com/astaxie/beego/logs"
 	"github.com/astaxie/beego/utils"
+	"github.com/yumimobi/beego/grace"
 )
 
 var (
@@ -127,6 +127,7 @@ func (app *App) Run(mws ...MiddleWare) {
 				server.Server.WriteTimeout = app.Server.WriteTimeout
 				if BConfig.Listen.EnableMutualHTTPS {
 
+					server.ListenAndServe()
 					if err := server.ListenAndServeMutualTLS(BConfig.Listen.HTTPSCertFile, BConfig.Listen.HTTPSKeyFile, BConfig.Listen.TrustCaFile); err != nil {
 						logs.Critical("ListenAndServeTLS: ", err, fmt.Sprintf("%d", os.Getpid()))
 						time.Sleep(100 * time.Microsecond)
