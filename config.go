@@ -45,6 +45,7 @@ type Config struct {
 	Listen              Listen
 	WebConfig           WebConfig
 	Log                 LogConfig
+	DebugConfig         DebugConfig
 }
 
 // Listen holds for http and https related config
@@ -109,6 +110,11 @@ type LogConfig struct {
 	AccessLogsFormat string //access log format: JSON_FORMAT, APACHE_FORMAT or empty string
 	FileLineNum      bool
 	Outputs          map[string]string // Store Adaptor : config
+}
+
+// DebugConfig holds Debug related config
+type DebugConfig struct {
+	PprofOn bool
 }
 
 var (
