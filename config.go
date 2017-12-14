@@ -257,6 +257,9 @@ func newBConfig() *Config {
 			FileLineNum:      true,
 			Outputs:          map[string]string{"console": ""},
 		},
+		DebugConfig: DebugConfig{
+			PprofOn: false,
+		},
 	}
 }
 

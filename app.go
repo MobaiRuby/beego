@@ -29,7 +29,7 @@ import (
 
 	"github.com/astaxie/beego/logs"
 	"github.com/astaxie/beego/utils"
-	"github.com/yumimobi/beego/grace"
+	"github.com/MobaiRuby/beego/grace"
 )
 
 var (
